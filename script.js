@@ -242,33 +242,6 @@ function generateCharts() {
 }
 
 
-document.getElementById('btn-history').addEventListener('click', () => { setTimeout(generateCharts, 200); });
-
-
-document.getElementById("save-weight").addEventListener("click", () => {
-  const value = parseFloat(document.getElementById("bodyweight").value);
-  if (!value) return alert("Bitte gültiges Gewicht eingeben.");
-  const weightLog = JSON.parse(localStorage.getItem("trainfit_bodyweights") || "[]");
-  weightLog.push({ date: new Date().toISOString(), weight: value });
-  localStorage.setItem("trainfit_bodyweights", JSON.stringify(weightLog));
-  alert("Körpergewicht gespeichert!");
-  document.getElementById("bodyweight").value = "";
-});
-
-
-document.getElementById("save-weight").addEventListener("click", () => {
-  const value = parseFloat(document.getElementById("bodyweight").value);
-  const goal = parseFloat(document.getElementById("goalweight").value);
-  if (!value) return alert("Bitte gültiges Gewicht eingeben.");
-  const weightLog = JSON.parse(localStorage.getItem("trainfit_bodyweights") || "[]");
-  weightLog.push({ date: new Date().toISOString(), weight: value });
-  localStorage.setItem("trainfit_bodyweights", JSON.stringify(weightLog));
-  if (goal) localStorage.setItem("trainfit_goalweight", goal.toString());
-  alert("Körpergewicht gespeichert!");
-  document.getElementById("bodyweight").value = "";
-  document.getElementById("goalweight").value = "";
-});
-
 function drawBodyweightChart() {
   const ctx = document.getElementById("bodyweight-chart").getContext("2d");
   const data = JSON.parse(localStorage.getItem("trainfit_bodyweights") || "[]");
