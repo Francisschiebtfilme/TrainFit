@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TrainFit</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.json">
+</head>
+<body>
+  <h1>TrainFit</h1>
+  <p>Letztes Training: <span id="last-training">nicht bekannt</span></p>
+  <button onclick="startTraining('push')">Push (Brust/Beine/Core)</button>
+  <button onclick="startTraining('pull')">Pull (Rücken/Beine/Core)</button>
+  <button onclick="showHistory()">Trainingsverlauf 📊</button>
+
+  <div id="training-area" style="display:none;"></div>
+  <div id="weight-entry">
+    <h3>Körpergewicht eintragen:</h3>
+    <input type="number" id="bodyweight" step="0.1" placeholder="z. B. 105.4"/>
+    <button onclick="saveBodyweight()">Speichern 📈</button>
+    <ul id="weight-history"></ul>
+    <canvas id="weight-chart" height="150"></canvas>
+  </div>
+
+  <div id="training-history" style="display:none;">
+    <h3>Trainingsverlauf</h3>
+    <div id="tabs"></div>
+    <div id="charts"></div>
+    <div id="log-list" style="max-height: 300px; overflow-y: auto;"></div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
