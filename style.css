@@ -1,0 +1,41 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background: var(--bg);
+    color: var(--text);
+    transition: background 0.3s, color 0.3s;
+}
+:root {
+    --bg: #ffffff;
+    --text: #000000;
+}
+.dark {
+    --bg: #121212;
+    --text: #ffffff;
+}
+.container {
+    text-align: center;
+}
+button {
+    width: 90%;
+    max-width: 400px;
+    padding: 15px;
+    margin: 10px;
+    font-size: 18px;
+    border: none;
+    border-radius: 10px;
+    background: #007aff;
+    color: white;
+}
+input {
+    width: 80%;
+    max-width: 300px;
+    padding: 10px;
+    margin: 5px auto;
+    font-size: 16px;
+    display: block;
+}
+.hidden {
+    display: none;
+}
