@@ -1,0 +1,10 @@
+{
+  "name": "TrainFit",
+  "short_name": "TrainFit",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#007aff",
+  "orientation": "portrait",
+  "icons": []
+}
