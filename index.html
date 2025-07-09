@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TrainFit</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container" id="main-screen">
+    <h1>TrainFit</h1>
+    <button onclick="startTraining('push')">🔥 Push Training starten</button>
+    <button onclick="startTraining('pull')">💪 Pull Training starten</button>
+    <button onclick="goToWeightEntry()">⚖️ Gewicht eintragen</button>
+    <button onclick="goToVerlauf()">📊 Trainingsverlauf</button>
+    <button onclick="toggleDarkMode()">🌙 Dark Mode</button>
+  </div>
+
+  <div class="container hidden" id="training-screen">
+    <h2 id="exercise-title"></h2>
+    <input type="number" id="exercise-weight" placeholder="Gewicht (kg)">
+    <input type="number" id="exercise-reps" placeholder="Wiederholungen">
+    <div class="nav-buttons">
+      <button onclick="prevExercise()">⬅ Zurück</button>
+      <button onclick="nextExercise()">Weiter ➡</button>
+    </div>
+  </div>
+
+  <div class="container hidden" id="weight-screen">
+    <h2>Körpergewicht eintragen</h2>
+    <input type="number" id="body-weight" placeholder="Gewicht in kg">
+    <button onclick="saveWeight()">💾 Speichern</button>
+    <button onclick="goHome()">Zurück</button>
+  </div>
+
+  <div class="container hidden" id="verlauf-screen">
+    <h2>Trainingsverlauf</h2>
+    <div id="charts-container"></div>
+    <canvas id="weight-chart" height="200"></canvas>
+    <button onclick="goHome()">Zurück</button>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
