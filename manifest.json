@@ -1,0 +1,9 @@
+
+{
+  "name": "TrainFit",
+  "short_name": "TrainFit",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "description": "Trainings- und Gewichtsdokumentation"
+}
